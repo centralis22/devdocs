@@ -12,7 +12,7 @@ description = "Reimplemented by William Hu, Gary Mao, and Bili Xu."
 ## Open Graph
 images = ["uscmarshall.jpg"]
 ogLocale = "en_US"
-domainTLD = "centralis22.github.io/devdocs"
+domainTLD = "centralis22.github.io"
 titleHome = "Doks Theme"
 
 ## JSON-LD

@@ -1,2 +1,2 @@
 canonifyURLs = false
-baseURL = "centralis22.github.io/devdocs"
+baseURL = "/devdocs"
