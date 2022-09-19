@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /devdocs/sitemap.xml
+Sitemap: sitemap.xml
