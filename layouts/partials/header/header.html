@@ -1,4 +1,5 @@
 <!-- Any change to partials requires removing and re-adding the file! -->
+<!-- Stricly no double curly brackets in comments -->
 
 {{ if .Site.Params.alert -}}
   {{ partial "header/alert.html" . }}
@@ -16,7 +17,7 @@
     <!-- Force redirect to subdomain on Github pages -->
     <!-- Currently unable to set separate subdomain for local testing and deployment -->
     <!-- Changed hard coded "/" to "/devdocs" -->
-    <!-- Maybe try {{ .Site.Params.PlaceHolderMyBaseURL? }} -->
+    <!-- Maybe try .Site.Params.PlaceHolderMyBaseURL -->
     <a class="navbar-brand order-0" href="{{ "/devdocs" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
       {{ .Site.Params.Title }}
     </a>
