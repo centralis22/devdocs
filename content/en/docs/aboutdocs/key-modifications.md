@@ -24,9 +24,12 @@ Theme modifications are located in `./layouts/` and `./static/css`.
 
 ## Functional Modifcations
 
-- `./partials/header/header.html` has been hard-coded to direct to 
+- In `./partials/header/header.html`, hard-coded `hrefs` to direct to 
 the project subdomain `/devdocs` to support Github project pages. 
 On local testing, clicking `Centralis` and `Get Started` will lead to 
 `404`.
 
-- `./layouts/index.html` has been modified to suit the project.
+- In `./layouts/index.html`, modified layout and `hrefs`.
+
+- In `./markdownlint-cli2.jsonc`, set `MD009/no-trailing-spaces = false`
+to allow for looser markdown formatting.
