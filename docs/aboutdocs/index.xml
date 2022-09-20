@@ -1,21 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>About Docs on</title><link>https://centralis22.github.io/devdocs/docs/aboutdocs/</link><description>Recent content in About Docs on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/aboutdocs/index.xml" rel="self" type="application/rss+xml"/><item><title>Quickstart</title><link>https://centralis22.github.io/devdocs/docs/aboutdocs/quickstart/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/aboutdocs/quickstart/</guid><description>Hyas? #
-Doks is a Hyas theme build by the creator of Hyas.
-Footer notice? #
-Please keep it in place.
-Keyboard shortcuts for search? #
-focus: Ctrl + / select: ↓ and ↑ open: Enter close: Esc Other documentation? #
-Netlify Hugo Can I get support? #
-Create a topic:
-Netlify Community Hugo Forums Doks Discussions Contact the creator? #
-Send h-enk a message:
-Netlify Community Hugo Forums Doks Discussions</description></item><item><title>Modifications</title><link>https://centralis22.github.io/devdocs/docs/aboutdocs/modifications/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/aboutdocs/modifications/</guid><description>Hyas? #
-Doks is a Hyas theme build by the creator of Hyas.
-Footer notice? #
-Please keep it in place.
-Keyboard shortcuts for search? #
-focus: Ctrl + / select: ↓ and ↑ open: Enter close: Esc Other documentation? #
-Netlify Hugo Can I get support? #
-Create a topic:
-Netlify Community Hugo Forums Doks Discussions Contact the creator? #
-Send h-enk a message:
-Netlify Community Hugo Forums Doks Discussions</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>About Docs on</title><link>https://centralis22.github.io/devdocs/docs/aboutdocs/</link><description>Recent content in About Docs on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/aboutdocs/index.xml" rel="self" type="application/rss+xml"/><item><title>Quickstart</title><link>https://centralis22.github.io/devdocs/docs/aboutdocs/quickstart/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/aboutdocs/quickstart/</guid><description>Creating a new folder or page #
+All contents are located in ./content/en/docs/. Static contents are located in ./static/. Please follow the format of existing directory and file structures to create new content. For advanced instructions, please refer to the Doks website.</description></item><item><title>Key Modifications</title><link>https://centralis22.github.io/devdocs/docs/aboutdocs/key-modifications/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/aboutdocs/key-modifications/</guid><description>Basic Modifications #
+Basic modifications are made according to the Doks tutorial.
+Theme Modifications #
+Theme modifications are located in ./layouts/ and ./static/css.
+Functional Modifcations #
+In ./partials/header/header.html, hard-coded hrefs to direct to the project subdomain /devdocs to support Github project pages. On local testing, clicking Centralis and Get Started will lead to 404.
+In ./layouts/index.html, modified layout and hrefs.
+In ./markdownlint-cli2.jsonc, set MD009/no-trailing-spaces = false to allow for looser markdown formatting.</description></item></channel></rss>
