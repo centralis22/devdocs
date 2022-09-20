@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /devdocs/sitemap.xml
+Sitemap: https://centralis22.github.io/devdocs/sitemap.xml
