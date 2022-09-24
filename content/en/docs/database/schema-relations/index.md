@@ -15,7 +15,9 @@ toc: true
 
 ## Overview
 
-![Overview20220921](DB20220921.jpg)
+Version 0.2
+
+![Overview20220921](DB20220924.jpg)
 
 ### Session
 
@@ -25,17 +27,20 @@ toc: true
 | DATETIME | CREATE_DATE  | Session creation date. For auto deleting past sessions. |
 | INT      | STAGE        | Session progress stage (e.g. 1st poll, 2nd poll). |
 
-### Student
+### Team
+
+Individual students are not registered. Only teams.
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
-| INT, PK | STID  | |
+| INT, PK | TMID  | |
 | INT, FK | SEID  | Session UUID in which the student belongs to. |
-| STR     | UNAME | Student's username. Must be unique in a session if password is not required. |
-| ?[^1]   | TEAM  | Student's team. |
-| ?       | ROLE  | Student's role. |
+| STR     | TNAME | Team's name (Marshall room number). Must be unique in a session. Password not required. |
 
 ### Instructor
+
+Admin and Instructor share a table. Both have equal priviledges, and 
+will coordinate on which party is responsible for the simulation.
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
@@ -62,8 +67,8 @@ in the future.
 | ---  | ---  | ---      |
 | INT, PK | SAID   | |
 | INT, FK | SQID   | |
-| ?       | TEAM   | Each team submits one survey. |
-| ?       | ANSWER | Team's answer to one question in the survey. |
+| INT, FK | TMID   | Each team submits one survey. |
+| ?[^1]   | ANSWER | Team's answer to one question in the survey. |
 
 ### Admin
 
