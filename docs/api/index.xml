@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on</title><link>https://centralis22.github.io/devdocs/docs/api/</link><description>Recent content in API on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/api/index.xml" rel="self" type="application/rss+xml"/><item><title>API Overview</title><link>https://centralis22.github.io/devdocs/docs/api/api-overview/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-overview/</guid><description>WebSocket #
+WebSocket, wrapped under SockJS, without STOMP protocol, is used for communication between backend and frontend. It is chosen to facilitate real-time communication of Admin/Instructors -&amp;gt; Server -&amp;gt; Teams. STOMP is disregarded because stompjs is in maintenance mode.
+The backend implementation is split among the following files:
+config/WebSocketConfig (TBD) handler/GreetingHandler The frontend requires the following code:
+// Deployment address TBD.
+var sock = new SockJS('http://localhost:8080/greeting');
+sock.onopen = function() {
+console.</description></item></channel></rss>
