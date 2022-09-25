@@ -25,7 +25,7 @@ this stage of development.
 
 :o: All requests from the frontend to the server must contain at most one action.
 
-#### Team
+### Team
 
 ```json
 {
@@ -35,7 +35,7 @@ this stage of development.
 }
 ```
 
-#### Admin/Instructor
+### Admin/Instructor
 
 ```json
 {
