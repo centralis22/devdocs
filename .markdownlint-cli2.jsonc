@@ -6,7 +6,8 @@
     "MD026": false,
     "MD033": false,
     "MD034": false,
-    "MD009": false
+    "MD009": false,
+    "MD001": false
   },
   "ignores": ["node_modules", "CHANGELOG.md", "README.md"]
 }
