@@ -1,8 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on</title><link>https://centralis22.github.io/devdocs/docs/api/</link><description>Recent content in API on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/api/index.xml" rel="self" type="application/rss+xml"/><item><title>API Overview</title><link>https://centralis22.github.io/devdocs/docs/api/api-overview/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-overview/</guid><description>WebSocket #
-WebSocket, wrapped under SockJS, without STOMP protocol, is used for communication between backend and frontend. It is chosen to facilitate real-time communication of Admin/Instructors -&amp;gt; Server -&amp;gt; Teams. STOMP is disregarded because stompjs is in maintenance mode.
-The backend implementation is split among the following files:
-config/WebSocketConfig (TBD) handler/GreetingHandler The frontend requires the following code:
-// Deployment address TBD.
-var sock = new SockJS('http://localhost:8080/greeting');
-sock.onopen = function() {
-console.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on</title><link>https://centralis22.github.io/devdocs/docs/api/</link><description>Recent content in API on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/api/index.xml" rel="self" type="application/rss+xml"/><item><title>API Overview</title><link>https://centralis22.github.io/devdocs/docs/api/api-overview/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-overview/</guid><description>REST #
+REST is a stateless architecture. The backend does not maintain any state of the user/session, except in the database. Communication between the frontend and backend must adhere to this API. How to format a message, and how to interpret a message must be clearly documented in this section.
+WebSocket #
+WebSocket, wrapped under SockJS, without STOMP, is used for communication between backend and frontend. It is chosen to facilitate real-time communication of Admin/Instructors -&amp;gt; Server -&amp;gt; Teams.</description></item><item><title>API Basics</title><link>https://centralis22.github.io/devdocs/docs/api/api-basics/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-basics/</guid><description>Metadata and credentials #
+⚠️ Subject to change.
+Credentials needs to be preserved across pages. The application will either be designed as an SPA, or a cookie will be saved. Password encryption is not used in this stage of development.
+⭕ All requests from the frontend to the server must contain the credential section.
+⭕ All requests from the frontend to the server must contain at most one action.
+Team #
+{
+&amp;quot;session&amp;quot;: xxx,
+&amp;quot;teamName&amp;quot;: xxx,
+// Additional content
+}
+Admin/Instructor #
+{
+&amp;quot;session&amp;quot;: (Optional) xxx,
+&amp;quot;userName&amp;quot;: xxx,
+&amp;quot;password&amp;quot;: xxx,
+// Aditional content
+}</description></item><item><title>To Server</title><link>https://centralis22.github.io/devdocs/docs/api/to-server/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/to-server/</guid><description>Action: advance_stage #
+⚠️ Subject to change.
+The instructor requests the simulation to advance to the next stage. For example, from Welcome to Discussion #1.
+{
+// Continue from credentials
+&amp;quot;action&amp;quot;: &amp;quot;advance_stage&amp;quot;,
+&amp;quot;content&amp;quot;: xxx,
+}
+If content = -1, advance to next stage. Else, advance to a specific stage.
+Action: submit_poll #
+⚠️ Subject to change.
+The team submits their team decision poll.
+{
+// Continue from credentials
+&amp;quot;action&amp;quot;: &amp;quot;submit_poll&amp;quot;,
+&amp;quot;content&amp;quot;: {
+&amp;quot;poll_no&amp;quot;: xxx,
+&amp;quot;response&amp;quot;: [xxx, xxx, xxx],
+},
+}
+poll_no indicates if this is the first or second poll.</description></item><item><title>From Server</title><link>https://centralis22.github.io/devdocs/docs/api/from-server/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/from-server/</guid><description>Exceptions #
+Server to frontend transmissions do not contain the credential section.
+Listen: action_response #
+⚠️ Subject to change.
+The server may choose to provide a status code on the previous action. This response will be analogous to HTTP reponses.
+{
+&amp;quot;listen&amp;quot;: &amp;quot;action_response&amp;quot;,
+&amp;quot;content&amp;quot;: {
+&amp;quot;status_code&amp;quot;: xxx,
+&amp;quot;message&amp;quot;: xxx,
+},
+}
+For example, status_code = 404, message = not found.
+Listen: advance_stage #
+⚠️ Subject to change.
+The server notifies teams to advance to the specified stage.</description></item></channel></rss>
