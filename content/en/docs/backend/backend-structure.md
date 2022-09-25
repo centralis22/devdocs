@@ -1,5 +1,5 @@
 ---
-title: "Project Structure"
+title: "Backend Structure"
 description: "Spring Boot Project Structure."
 lead: "Spring Boot Project Structure."
 date: 2022-09-24T00:00:00+00:00
@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "backend"
-weight: 510
+weight: 520
 toc: true
 ---
 
@@ -21,7 +21,7 @@ For an general overview, see
 Centralis22's backend implementation contains the following packages:
 | Name | Comments |
 | ---  | ---      |
-| Config | |
+| Config | Config. |
 | Handler | Communication with frontend. |
 | Model | Java objects used in services. Can be serialized from/to DB and frontend. |
 | Repository | DB query methods. |

@@ -15,9 +15,9 @@ toc: true
 
 ## Overview
 
-Version 0.2
+Version 0.3
 
-![Overview20220921](DB20220924.jpg)
+![Overview20220921](DB202209242.jpg)
 
 ### Session
 
@@ -34,18 +34,18 @@ Individual students are not registered. Only teams.
 | Type | Name | Comments |
 | ---  | ---  | ---      |
 | INT, PK | TMID  | |
-| INT, FK | SEID  | Session UUID in which the student belongs to. |
+| INT, FK | SEID  | Session UUID in which the team belongs to. |
 | STR     | TNAME | Team's name (Marshall room number). Must be unique in a session. Password not required. |
 
-### Instructor
+### Admin/Instructor
 
-Admin and Instructor share a table. Both have equal priviledges, and 
-will coordinate on which party is responsible for the simulation.
+Admins and instructors share a table. Both have equal priviledges to create 
+and administer a session. Admins and instructors have the ability to join any 
+session. 
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
 | INT, PK | INID  | |
-| INT, FK | SEID  | |
 | STR     | UNAME | |
 | STR     | PSWD  | Instructors are required to have a password. |
 
