@@ -22,11 +22,13 @@ of Admin/Instructors -> Server -> Teams. STOMP is disregarded because
 is in maintenance mode.
 
 The backend implementation is split among the following files:
+
 - `config/WebSocketConfig`
 - `(TBD) handler/GreetingHandler`
 
 The frontend requires the following code:
-```
+
+```javascript
 // Deployment address TBD.
 var sock = new SockJS('http://localhost:8080/greeting');
 
