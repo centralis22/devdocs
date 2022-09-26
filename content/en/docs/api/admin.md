@@ -57,6 +57,7 @@ example, from *Welcome* to *Discussion #1*.
 ```json
 {
     // Broadcast
+    "broadcast": "advance_stage",
     "content": <int>,
 }
 ```
