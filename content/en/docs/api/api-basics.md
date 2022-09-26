@@ -1,7 +1,7 @@
 ---
 title: "API Basics"
-description: "Standardized format and requirements for all frontend to server transmissions."
-lead: "Standardized format and requirements for all frontend to server transmissions."
+description: "Standardized format and requirements for all communications."
+lead: "Standardized format and requirements for all communications."
 date: 2022-09-24T00:00:00+00:00
 lastmod: 2022-09-24T00:00:00+00:00
 draft: false
@@ -13,40 +13,76 @@ weight: 320
 toc: true
 ---
 
-## Metadata and credentials
+## Client requests
 
 :warning: Subject to change.
 
-Credentials needs to be preserved across pages. The application will either be 
-designed as an SPA, or a cookie will be saved. Password encryption is not used in 
-this stage of development.
-
-:o: All requests from the frontend to the server must contain the credential section.
+This metadata must be provided in each frontend-to-server transmission. Password 
+encryption is not used in this stage of development.
 
 :o: All requests from the frontend to the server must contain at most one action.
 
-### Team
-
 ```json
 {
-    "session": xxx,
-    "teamName": xxx,
-    "action_id": xxx,
-    // Action
+    "user": (See below),
+    "session": <int>,
+    "request_id": <int>,
+    // Request
 }
 ```
+
+- `session`: Required when joining a session. Not required when creating a new 
+session.
+- `request_id`: Requests may be processed out of order because of multithreading. 
+If the client requires a request to be executed in order, he must wait for a 
+success response, before submitting the next.
 
 ### Admin/Instructor
 
 ```json
-{
-    "session": (Optional) xxx,
-    "userName": xxx,
-    "password": xxx,
-    "action_id": xxx,
-    // Action
+"user": {
+    "type": "admin",
+    "username": <string>,
+    "password": <string>,
 }
 ```
 
-`action_id` is frontend-generated. The server may choose to provide a response for 
-an action.
+### Team
+
+```json
+"user": {
+    "type": "team",
+    "username": <string>
+}
+```
+
+## Server responses
+
+:warning: Subject to change.
+
+The server must provide a response for each request. It indicates if the request 
+is a success, failure, or other. These responses are analogous to HTTP reponses.
+
+```json
+{
+    "message_type": "respond",
+    "respond_id": <int>,
+    "status_code": <int>,
+    "status_message": <string>,
+    // Respond
+}
+```
+
+## Server broadcasts
+
+:warning: Subject to change.
+
+The server may broadcast a message to all clients. All client must actively listen 
+to a broadcast.
+
+```json
+{
+    "message_type": "broadcast",
+    // Broadcast
+}
+```
