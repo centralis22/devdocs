@@ -49,4 +49,5 @@ The team submits their team decision poll.
 
 `poll_no` indicates if this is the first or second poll.
 
-`response` contains an array, the first entry is the response to the first question.
+`response` contains an array, the 0th entry is the response to the first question, 
+etc.

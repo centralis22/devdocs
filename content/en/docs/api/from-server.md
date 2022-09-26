@@ -21,20 +21,22 @@ Server to frontend transmissions do not contain the credential section.
 
 :warning: Subject to change.
 
-The server may choose to provide a status code on the previous action. 
-This response will be analogous to HTTP reponses.
+The server may choose to provide a response for a previous action, indicating 
+if the action is a success, or failure. These responses are analogous to HTTP 
+reponses.
 
 ```json
 {
     "listen": "action_response",
     "content": {
+        "action_id": xxx,
         "status_code": xxx,
         "message": xxx,
     },
 }
 ```
 
-For example, `status_code` = 404, `message` = not found.
+Example: `status_code: 404`, `message: Not found`.
 
 ## Listen: advance_stage
 

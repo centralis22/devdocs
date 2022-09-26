@@ -31,7 +31,8 @@ this stage of development.
 {
     "session": xxx,
     "teamName": xxx,
-    // Additional content
+    "action_id": xxx,
+    // Action
 }
 ```
 
@@ -42,6 +43,10 @@ this stage of development.
     "session": (Optional) xxx,
     "userName": xxx,
     "password": xxx,
-    // Aditional content
+    "action_id": xxx,
+    // Action
 }
 ```
+
+`action_id` is frontend-generated. The server may choose to provide a response for 
+an action.
