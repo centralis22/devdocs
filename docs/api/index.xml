@@ -10,15 +10,18 @@ Team #
 {
 &amp;quot;session&amp;quot;: xxx,
 &amp;quot;teamName&amp;quot;: xxx,
-// Additional content
+&amp;quot;action_id&amp;quot;: xxx,
+// Action
 }
 Admin/Instructor #
 {
 &amp;quot;session&amp;quot;: (Optional) xxx,
 &amp;quot;userName&amp;quot;: xxx,
 &amp;quot;password&amp;quot;: xxx,
-// Aditional content
-}</description></item><item><title>To Server</title><link>https://centralis22.github.io/devdocs/docs/api/to-server/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/to-server/</guid><description>Action: advance_stage #
+&amp;quot;action_id&amp;quot;: xxx,
+// Action
+}
+action_id is frontend-generated.</description></item><item><title>To Server</title><link>https://centralis22.github.io/devdocs/docs/api/to-server/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/to-server/</guid><description>Action: advance_stage #
 ⚠️ Subject to change.
 The instructor requests the simulation to advance to the next stage. For example, from Welcome to Discussion #1.
 {
@@ -42,15 +45,15 @@ poll_no indicates if this is the first or second poll.</description></item><item
 Server to frontend transmissions do not contain the credential section.
 Listen: action_response #
 ⚠️ Subject to change.
-The server may choose to provide a status code on the previous action. This response will be analogous to HTTP reponses.
+The server may choose to provide a response for a previous action, indicating if the action is a success, or failure. These responses are analogous to HTTP reponses.
 {
 &amp;quot;listen&amp;quot;: &amp;quot;action_response&amp;quot;,
 &amp;quot;content&amp;quot;: {
+&amp;quot;action_id&amp;quot;: xxx,
 &amp;quot;status_code&amp;quot;: xxx,
 &amp;quot;message&amp;quot;: xxx,
 },
 }
-For example, status_code = 404, message = not found.
+Example: status_code: 404, message: Not found.
 Listen: advance_stage #
-⚠️ Subject to change.
-The server notifies teams to advance to the specified stage.</description></item></channel></rss>
+⚠️ Subject to change.</description></item></channel></rss>

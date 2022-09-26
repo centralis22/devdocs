@@ -42,17 +42,18 @@ Reconnection #The frontend is reponsible for checking if the WebSocket connecti
 Credentials needs to be preserved across pages. The application will either be designed as an SPA, or a cookie will be saved. Password encryption is not used in this stage of development.
 ⭕ All requests from the frontend to the server must contain the credential section.
 ⭕ All requests from the frontend to the server must contain at most one action.
-Team #{\u0026quot;session\u0026quot;: xxx,\u0026quot;teamName\u0026quot;: xxx,// Additional content}Admin/Instructor #{\u0026quot;session\u0026quot;: (Optional) xxx,\u0026quot;userName\u0026quot;: xxx,\u0026quot;password\u0026quot;: xxx,// Aditional content}`}),e.add({id:8,href:"/devdocs/docs/api/to-server/",title:"To Server",description:"Frontend to server API.",content:`Action: advance_stage #⚠️ Subject to change.
+Team #{\u0026quot;session\u0026quot;: xxx,\u0026quot;teamName\u0026quot;: xxx,\u0026quot;action_id\u0026quot;: xxx,// Action}Admin/Instructor #{\u0026quot;session\u0026quot;: (Optional) xxx,\u0026quot;userName\u0026quot;: xxx,\u0026quot;password\u0026quot;: xxx,\u0026quot;action_id\u0026quot;: xxx,// Action}action_id is frontend-generated. The server may choose to provide a response for an action.
+`}),e.add({id:8,href:"/devdocs/docs/api/to-server/",title:"To Server",description:"Frontend to server API.",content:`Action: advance_stage #⚠️ Subject to change.
 The instructor requests the simulation to advance to the next stage. For example, from Welcome to Discussion #1.
 {// Continue from credentials\u0026quot;action\u0026quot;: \u0026quot;advance_stage\u0026quot;,\u0026quot;content\u0026quot;: xxx,}If content = -1, advance to next stage. Else, advance to a specific stage.
 Action: submit_poll #⚠️ Subject to change.
 The team submits their team decision poll.
 {// Continue from credentials\u0026quot;action\u0026quot;: \u0026quot;submit_poll\u0026quot;,\u0026quot;content\u0026quot;: {\u0026quot;poll_no\u0026quot;: xxx,\u0026quot;response\u0026quot;: [xxx, xxx, xxx],},}poll_no indicates if this is the first or second poll.
-response contains an array, the first entry is the response to the first question.
+response contains an array, the 0th entry is the response to the first question, etc.
 `}),e.add({id:9,href:"/devdocs/docs/api/from-server/",title:"From Server",description:"Server to frontend API.",content:`Exceptions #Server to frontend transmissions do not contain the credential section.
 Listen: action_response #⚠️ Subject to change.
-The server may choose to provide a status code on the previous action. This response will be analogous to HTTP reponses.
-{\u0026quot;listen\u0026quot;: \u0026quot;action_response\u0026quot;,\u0026quot;content\u0026quot;: {\u0026quot;status_code\u0026quot;: xxx,\u0026quot;message\u0026quot;: xxx,},}For example, status_code = 404, message = not found.
+The server may choose to provide a response for a previous action, indicating if the action is a success, or failure. These responses are analogous to HTTP reponses.
+{\u0026quot;listen\u0026quot;: \u0026quot;action_response\u0026quot;,\u0026quot;content\u0026quot;: {\u0026quot;action_id\u0026quot;: xxx,\u0026quot;status_code\u0026quot;: xxx,\u0026quot;message\u0026quot;: xxx,},}Example: status_code: 404, message: Not found.
 Listen: advance_stage #⚠️ Subject to change.
 The server notifies teams to advance to the specified stage.
 {// Continue from credentials\u0026quot;listen\u0026quot;: \u0026quot;advance_stage\u0026quot;,\u0026quot;content\u0026quot;: xxx,}See action page on content.
