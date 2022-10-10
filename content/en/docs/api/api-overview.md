@@ -37,7 +37,7 @@ The frontend requires the following code:
 
 ```javascript
 // Deployment address TBD.
-var sock = new SockJS('http://localhost:8080/greeting');
+var sock = new SockJS('http://localhost:8080/api');
 
 sock.onopen = function() {
     console.log('open');

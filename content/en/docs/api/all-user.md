@@ -34,6 +34,15 @@ All users may login. Password encryption is not used in this stage of developmen
 
 - `user_type`: Either admin or student.
 - `user_name`: For admin users, their username. For students, their team name, or room name.
-- `user_pswd`: For admin users only. Leave blank for students.
-- `session_id`: Provide a `session_id` to join a created session. Leave blank for instructors
- when creating a new session. Required for admins and students when joining a session.
+- `user_pswd`: For admin users only. Leave empty string for students.
+- `session_id`: Provide a `session_id` to join a created session.
+
+```json
+{
+    // Respond
+    "content": <int>,
+}
+```
+
+- `status_code`: On success, 200. On failure, others.
+- `content`: On success, session stage.

@@ -23,7 +23,10 @@ The instructor creates a new session.
 {
     // Request
     "request": "create_session",
-    "content": "",
+    "content": {
+        "user_name": <string>,
+        "user_pswd": <string>
+    },
 }
 ```
 
@@ -35,7 +38,7 @@ The instructor creates a new session.
 ```
 
 - `status_code`: On success, 200.
-- `content`: On success, server generated session ID.
+- `content`: On success, 6-digit server generated session ID.
 
 ## advance_stage
 
