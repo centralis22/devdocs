@@ -22,19 +22,22 @@ All users may login. Password encryption is not used in this stage of developmen
 &amp;quot;session_id&amp;quot;: &amp;lt;int&amp;gt;
 },
 }
-user_type: Either admin or student. user_name: For admin users, their username. For students, their team name, or room name. user_pswd: For admin users only. Leave blank for students. session_id: Provide a session_id to join a created session.</description></item><item><title>Admin</title><link>https://centralis22.github.io/devdocs/docs/api/admin/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/admin/</guid><description>create_session #
+user_type: Either admin or student. user_name: For admin users, their username. For students, their team name, or room name. user_pswd: For admin users only. Leave empty string for students. session_id: Provide a session_id to join a created session.</description></item><item><title>Admin</title><link>https://centralis22.github.io/devdocs/docs/api/admin/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/admin/</guid><description>create_session #
 ⚠️ Subject to change.
 The instructor creates a new session.
 {
 // Request
 &amp;quot;request&amp;quot;: &amp;quot;create_session&amp;quot;,
-&amp;quot;content&amp;quot;: &amp;quot;&amp;quot;,
+&amp;quot;content&amp;quot;: {
+&amp;quot;user_name&amp;quot;: &amp;lt;string&amp;gt;,
+&amp;quot;user_pswd&amp;quot;: &amp;lt;string&amp;gt;
+},
 }
 {
 // Respond
 &amp;quot;content&amp;quot;: &amp;lt;int&amp;gt;,
 }
-status_code: On success, 200. content: On success, server generated session ID. advance_stage #
+status_code: On success, 200. content: On success, 6-digit server generated session ID. advance_stage #
 ⚠️ Subject to change.
 The instructor advances the simulation to the next stage for all users. For example, from Welcome to Discussion #1.
 {
