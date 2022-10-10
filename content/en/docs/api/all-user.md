@@ -44,5 +44,5 @@ All users may login. Password encryption is not used in this stage of developmen
 }
 ```
 
-- `status_code`: On success, 200. On failure, others.
+- `status_code`: 200, on success. 400, on non-existant session. 403, on failed admin login.
 - `content`: On success, session stage.

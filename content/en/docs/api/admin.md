@@ -37,7 +37,7 @@ The instructor creates a new session.
 }
 ```
 
-- `status_code`: On success, 200.
+- `status_code`: 200, on success. 403, on credentials failure.
 - `content`: On success, 6-digit server generated session ID.
 
 ## advance_stage
