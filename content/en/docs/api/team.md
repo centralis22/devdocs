@@ -21,7 +21,7 @@ The team submits their team decision poll.
 
 ```json
 {
-    // Continue from credentials
+    // Request
     "request": "submit_poll",
     "content": {
         "poll_no": <int>,
