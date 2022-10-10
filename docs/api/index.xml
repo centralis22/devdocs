@@ -3,15 +3,26 @@ REST is a stateless architecture. The backend does not maintain any state of the
 WebSocket #
 WebSocket, wrapped under SockJS, without STOMP, is used for communication between backend and frontend. It is chosen to facilitate real-time communication of Admin/Instructors -&amp;gt; Server -&amp;gt; Teams.</description></item><item><title>API Basics</title><link>https://centralis22.github.io/devdocs/docs/api/api-basics/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-basics/</guid><description>Client requests #
 ⚠️ Subject to change.
-This metadata must be provided in each frontend-to-server transmission. Password encryption is not used in this stage of development.
+This metadata must be provided in each frontend-to-server transmission.
 ⭕ All requests from the frontend to the server must contain at most one action.
 {
-&amp;quot;user&amp;quot;: (See below),
-&amp;quot;session&amp;quot;: &amp;lt;int&amp;gt;,
 &amp;quot;request_id&amp;quot;: &amp;lt;int&amp;gt;,
 // Request
 }
-session: Required when joining a session. Not required when creating a new session. request_id: Requests may be processed out of order because of multithreading.</description></item><item><title>Admin</title><link>https://centralis22.github.io/devdocs/docs/api/admin/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/admin/</guid><description>create_session #
+session: Required when joining a session. Not required when creating a new session. request_id: Requests may be processed out of order because of multithreading. If the client requires a request to be executed in order, he must wait for a success response, before submitting the next.</description></item><item><title>All Users</title><link>https://centralis22.github.io/devdocs/docs/api/all-user/</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/all-user/</guid><description>login #
+⚠️ Subject to change.
+All users may login. Password encryption is not used in this stage of development.
+{
+// Request
+&amp;quot;request&amp;quot;: &amp;quot;login&amp;quot;,
+&amp;quot;content&amp;quot;: {
+&amp;quot;user_type&amp;quot;: &amp;quot;admin/student&amp;quot;,
+&amp;quot;user_name&amp;quot;: &amp;lt;string&amp;gt;,
+&amp;quot;user_pswd&amp;quot;: &amp;lt;string&amp;gt;,
+&amp;quot;session_id&amp;quot;: &amp;lt;int&amp;gt;
+},
+}
+user_type: Either admin or student. user_name: For admin users, their username. For students, their team name, or room name. user_pswd: For admin users only. Leave blank for students. session_id: Provide a session_id to join a created session.</description></item><item><title>Admin</title><link>https://centralis22.github.io/devdocs/docs/api/admin/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/admin/</guid><description>create_session #
 ⚠️ Subject to change.
 The instructor creates a new session.
 {
@@ -35,7 +46,7 @@ content: -1, advance to next stage.</description></item><item><title>Team</title
 ⚠️ Subject to change.
 The team submits their team decision poll.
 {
-// Continue from credentials
+// Request
 &amp;quot;request&amp;quot;: &amp;quot;submit_poll&amp;quot;,
 &amp;quot;content&amp;quot;: {
 &amp;quot;poll_no&amp;quot;: &amp;lt;int&amp;gt;,
