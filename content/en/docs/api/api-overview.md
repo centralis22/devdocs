@@ -28,10 +28,10 @@ Admin/Instructors -> Server -> Teams. STOMP is disregarded because
 [stompjs](https://github.com/stomp-js/stompjs) 
 is in maintenance mode.
 
-The backend implementation is split among the following files:
+The backend configuration and implementation is split among the following files:
 
-- `config/WebSocketConfig`
-- `(TBD) handler/GreetingHandler`
+- `config.WebSocketConfig`
+- `handler.WebSocketAPIHandler`
 
 The frontend requires the following code:
 
@@ -62,6 +62,12 @@ To bypass CORS with Spring, refer to
 [Spring Docs 25.2.6 WebSocket: Configuring allowed origins](https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/websocket.html)
 and 
 [setAllowedOriginPatterns()](https://stackoverflow.com/questions/66060750/cors-error-when-using-corsfilter-and-spring-security).
+
+## Interceptors
+You may add interceptors to the registery per 
+[Spring Docs](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#websocket-server-handshake)
+with 
+[.addInterceptors()](https://stackoverflow.com/questions/22962332/spring-4-websockets-sockjs-websockethandshake-interceptors-never-invoked).
 
 ## Reconnection
 
