@@ -20,4 +20,5 @@ Includes the `Instructor`, `SimUser`, `Team`, etc. See Database.
 ## SimUser
 
 `SimUser` is a user who is currently connected to the server. It 
-represents a client-server connection, and is not persisted.
+represents a client-server connection, that is volatile and actively 
+monitored by the program. It is not persisted by the database.
