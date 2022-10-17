@@ -14,4 +14,7 @@ toc: true
 ---
 
 ## WebSocketAPIHandler
-All WebSocket connections to `/api` will be routed here.
+
+All WebSocket connections to the `/api` endpoint will be routed to 
+`WebSocketAPIHandler`. It is the first layer in client-server communication.
+

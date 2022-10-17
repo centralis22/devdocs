@@ -14,4 +14,5 @@ toc: true
 ---
 
 ## WebSocketConfig
-See API Basics.
+
+See API Overview and API Basics.

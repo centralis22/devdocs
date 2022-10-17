@@ -64,6 +64,7 @@ and
 [setAllowedOriginPatterns()](https://stackoverflow.com/questions/66060750/cors-error-when-using-corsfilter-and-spring-security).
 
 ## Interceptors
+
 You may add interceptors to the registery per 
 [Spring Docs](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#websocket-server-handshake)
 with 
