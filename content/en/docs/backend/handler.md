@@ -16,4 +16,7 @@ toc: true
 ## WebSocketAPIHandler
 
 All WebSocket connections to the `/api` endpoint will be routed to 
-`WebSocketAPIHandler`. It is the first layer in client-server communication.
+`WebSocketAPIHandler`. It is the first layer in client-to-server communication.
+
+Spring exposed methods `afterConnectionEstablished()` and 
+`afterConnectionClosed()` are used to keep track of existing connections.

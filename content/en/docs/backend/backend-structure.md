@@ -15,15 +15,16 @@ toc: true
 
 ## Packages
 
-For an general overview, see 
+For a general overview on Spring packages, see 
 [Project Structure and Best Practices](https://medium.com/the-resonant-web/spring-boot-2-0-project-structure-and-best-practices-part-2-7137bdcba7d3).
 
 Centralis22's backend implementation contains the following packages:
 | Name | Comments |
 | ---  | ---      |
 | Config | Config. |
-| Handler | Communication with frontend. |
-| Model | Java objects used in services. Can be serialized from/to DB and frontend. |
-| Repository | DB query methods. |
-| Service | Crucial methods that are directly related to the purpose of the application. |
-| Util | Supplementary methods to help services. |
+| Handler | Classes to communicate with frontend. |
+| Model | Java objects used by the backend. Can be serialized from/to DB and frontend. |
+| Repository | DB query methods. See [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories). |
+| Security | Classes to validate a user and save his login information. |
+| Service | Classes directly related to Centralis's requirements. |
+| Util | Supplementary classes to help services. |
