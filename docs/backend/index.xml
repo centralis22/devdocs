@@ -9,7 +9,11 @@ See Database. Includes:
 Instructor SimSession Survey Team SimUser #
 SimUser is a network user who is currently connected to the server through a WebSocket. It is a volatile connection, actively monitored by the program, and not persisted by the database.
 For example, a new SimUser is created when a network user accesses the website. It is removed when he voluntarily exits the website, or when the connection is terminated because of network instability, etc.</description></item><item><title>security</title><link>https://centralis22.github.io/devdocs/docs/backend/security/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/backend/security/</guid><description>Security Design #
-Hello</description></item><item><title>service.RequestDispatcher</title><link>https://centralis22.github.io/devdocs/docs/backend/service-request-dispatcher/</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/backend/service-request-dispatcher/</guid><description>RequestDispatcher #
+Current design is loosely based on Spring Security. Spring Security only supports HTTP, and WebSocket w/ STOMP.
+📝 It is possible to adapt our application to use HTTP, since WebSocket does require an initial HTTP handshake. However, it will require considerable research.
+But no no no.
+Security flow #
+draw.io (right click, save)</description></item><item><title>service.RequestDispatcher</title><link>https://centralis22.github.io/devdocs/docs/backend/service-request-dispatcher/</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/backend/service-request-dispatcher/</guid><description>RequestDispatcher #
 Wrapper for RequestHandler. Sorts the request by type to avoid bloating the message handlers.</description></item><item><title>service.UserManagement</title><link>https://centralis22.github.io/devdocs/docs/backend/service-usermanagement/</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/backend/service-usermanagement/</guid><description>ActionDispatcher #
 Calls the corresponding ActionHandler depending on action type. Prevents bloating calling functions with if-else&amp;rsquo;s.
 ActionHandler #
