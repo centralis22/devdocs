@@ -3,7 +3,7 @@ title: "Schema and Relations"
 description: "DB Schema and relations."
 lead: "DB Schema and relations."
 date: 2022-09-21T00:00:00+00:00
-lastmod: 2022-09-21T00:00:00+00:00
+lastmod: 2022-10-23T00:00:00+00:00
 draft: false
 images: []
 menu:
@@ -15,17 +15,17 @@ toc: true
 
 ## Overview
 
-Version 0.3
+[draw.io (right click, save)](/downloads/DB.drawio)
 
-![Overview20220921](DB202209242.jpg)
+![Overview20221023](DB.drawio.png)
 
 ### Session
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
-| INT, PK  | SEID         | Session UUID. |
-| DATETIME | CREATE_DATE  | Session creation date. For auto deleting past sessions. |
-| INT      | STAGE        | Session progress stage (e.g. 1st poll, 2nd poll). |
+| INT, PK  | SEID | Session UUID. |
+| DATETIME | DATE | Session creation date. For auto deleting past sessions. |
+| INT      | STAGE | Session progress stage (e.g. 1st poll, 2nd poll). |
 
 ### Team
 
@@ -33,9 +33,9 @@ Individual students are not registered. Only teams.
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
-| INT, PK | TMID  | |
-| INT, FK | SEID  | Session UUID in which the team belongs to. |
-| STR     | TNAME | Team's name (Marshall room number). Must be unique in a session. Password not required. |
+| INT, PK      | TMID  | |
+| INT, FK      | SEID  | Session UUID in which the team belongs to. |
+| VARCHAR(255) | TNAME | Team's name (Marshall room number). Must be unique in a session. Password not required. |
 
 ### Admin/Instructor
 
@@ -45,34 +45,27 @@ session.
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
-| INT, PK | INID  | |
-| STR     | UNAME | |
-| STR     | PSWD  | Instructors are required to have a password. |
+| INT, PK      | INID  | |
+| VARCHAR(255) | UNAME | |
+| VARCHAR(255) | PSWD  | Instructors are required to have a password. |
 
-### Survey Questions
+### Survey
 
-Survey questions and survey answers are stored in two separate tables. 
-One-to-many relation. Support for MCQ, Short Answers, etc. can be added 
-in the future.
+Stores only survey answers. Survey questions are pre-determined and 
+delivered static to the teams. We do not anticipate any change to the 
+survey questions.
 
-| Type | Name | Comments |
-| ---  | ---  | ---      |
-| INT, PK | SQID  | |
-| INT, FK | SEID  | |
-| STR     | QUESTION | |
-
-### Survey Answers
+Note: A single MySQL row may store at most 65,535 bytes. The database 
+is created with UTF8MB4, reducing the maximum to 16,384 bytes.
 
 | Type | Name | Comments |
 | ---  | ---  | ---      |
-| INT, PK | SAID   | |
-| INT, FK | SQID   | |
-| INT, FK | TMID   | Each team submits one survey. |
-| ?[^1]   | ANSWER | Team's answer to one question in the survey. |
-
-### Admin
-
-The admin table is not listed. Will be identical to the `Instructor` table, 
-except that admins are not associated with sessions.
-
-[^1]: The type has not been decided.
+| INT, PK       | SQID   | |
+| INT, FK       | SEID   | Session UUID in which the team belongs to. |
+| INT, FK       | TMID   | Team who completed the survey. |
+| INT           | SVGRP  | 1st survey, or 2nd survey. |
+| VARCHAR(1023) | Q1     | Limit answers to 1023 characters. |
+| VARCHAR(1023) | Q2     | |
+| VARCHAR(1023) | Q3     | |
+| VARCHAR(1023) | Q4     | |
+| VARCHAR(1023) | Q5     | |
