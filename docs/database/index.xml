@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Database on</title><link>https://centralis22.github.io/devdocs/docs/database/</link><description>Recent content in Database on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/database/index.xml" rel="self" type="application/rss+xml"/><item><title>Schema and Relations</title><link>https://centralis22.github.io/devdocs/docs/database/schema-relations/</link><pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/database/schema-relations/</guid><description>Overview #
-Version 0.3
+draw.io (right click, save)
 Session #
-Type Name Comments INT, PK SEID Session UUID. DATETIME CREATE_DATE Session creation date. For auto deleting past sessions. INT STAGE Session progress stage (e.g. 1st poll, 2nd poll). Team #
+Type Name Comments INT, PK SEID Session UUID. DATETIME DATE Session creation date. For auto deleting past sessions. INT STAGE Session progress stage (e.g. 1st poll, 2nd poll). Team #
 Individual students are not registered. Only teams.
-Type Name Comments INT, PK TMID INT, FK SEID Session UUID in which the team belongs to. STR TNAME Team&amp;rsquo;s name (Marshall room number). Must be unique in a session.</description></item></channel></rss>
+Type Name Comments INT, PK TMID INT, FK SEID Session UUID in which the team belongs to. VARCHAR(255) TNAME Team&amp;rsquo;s name (Marshall room number). Must be unique in a session.</description></item></channel></rss>
