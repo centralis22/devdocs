@@ -37,15 +37,9 @@ The instructor creates a new session.
 // Respond
 &amp;quot;content&amp;quot;: &amp;lt;int&amp;gt;,
 }
-status_code: On success, 200. content: On success, 6-digit server generated session ID. advance_stage #
+status_code: 200, on success. 403, on credentials failure. content: On success, 6-digit server generated session ID. advance_stage #
 ⚠️ Subject to change.
-The instructor advances the simulation to the next stage for all users. For example, from Welcome to Discussion #1.
-{
-// Request
-&amp;quot;request&amp;quot;: &amp;quot;advance_stage&amp;quot;,
-&amp;quot;content&amp;quot;: &amp;lt;int&amp;gt;,
-}
-content: -1, advance to next stage.</description></item><item><title>Team</title><link>https://centralis22.github.io/devdocs/docs/api/team/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/team/</guid><description>submit_poll #
+The instructor advances the simulation to the next stage for all users. For example, from Welcome to Discussion #1.</description></item><item><title>Team</title><link>https://centralis22.github.io/devdocs/docs/api/team/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/team/</guid><description>submit_poll #
 ⚠️ Subject to change.
 The team submits their team decision poll.
 {
