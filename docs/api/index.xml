@@ -1,7 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on</title><link>https://centralis22.github.io/devdocs/docs/api/</link><description>Recent content in API on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/api/index.xml" rel="self" type="application/rss+xml"/><item><title>API Overview</title><link>https://centralis22.github.io/devdocs/docs/api/api-overview/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-overview/</guid><description>REST #
-REST is a stateless architecture. The backend does not maintain any state of the user/session, except in the database. Communication between the frontend and backend must adhere to this API. How to format a message, and how to interpret a message must be clearly documented in this section.
-WebSocket #
-WebSocket, wrapped under SockJS, without STOMP, is used for communication between backend and frontend. It is chosen to facilitate real-time communication of Admin/Instructors -&amp;gt; Server -&amp;gt; Teams.</description></item><item><title>API Basics</title><link>https://centralis22.github.io/devdocs/docs/api/api-basics/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-basics/</guid><description>Client requests #
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on</title><link>https://centralis22.github.io/devdocs/docs/api/</link><description>Recent content in API on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://centralis22.github.io/devdocs/docs/api/index.xml" rel="self" type="application/rss+xml"/><item><title>API Overview</title><link>https://centralis22.github.io/devdocs/docs/api/api-overview/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-overview/</guid><description>WebSocket and REST #
+Frontend-backend communication is done through WebSockets, mimicing REST architecture.
+For a working backend example, see StackOverflow implementation.
+For a working frontend example, use the following code:
+// Default address: http://localhost:8080/.
+var sock = new SockJS('&amp;lt;Enter your address&amp;gt;');
+sock.onopen = function() {
+console.log('open');
+sock.send('test');
+};
+sock.onmessage = function(e) {
+console.log('message', e.data);
+};
+sock.onclose = function() {
+console.log('close');
+};</description></item><item><title>API Basics</title><link>https://centralis22.github.io/devdocs/docs/api/api-basics/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://centralis22.github.io/devdocs/docs/api/api-basics/</guid><description>Client requests #
 ⚠️ Subject to change.
 This metadata must be provided in each frontend-to-server transmission.
 ⭕ All requests from the frontend to the server must contain at most one action.
