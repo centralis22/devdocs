@@ -7,8 +7,8 @@
     <div class="col-lg-9 col-xl-8 text-center">
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
       <!-- Changed hard coded "/" to point to "/devdocs" subdomain -->
-      <!-- See header/header.html -->
-      <a class="btn btn-primary btn-lg px-4 mb-2" href="/devdocs/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}aboutdocs/quickstart/" role="button">Get Started</a>
+      <!-- See partials/header/header.html -->
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="/devdocs/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}important/for-users/" role="button">Get Started</a>
     </div>
   </div>
 </section>

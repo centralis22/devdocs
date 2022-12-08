@@ -15,4 +15,7 @@ toc: true
 
 ## WebSocketConfig
 
-See API Overview and API Basics.
+To set up a WebSocket endpoint, see StackOverflow implementation in `API Overview`.
+
+To enable CORS for an endpoint, use
+[setAllowedOriginPatterns()](https://stackoverflow.com/questions/66060750/cors-error-when-using-corsfilter-and-spring-security).

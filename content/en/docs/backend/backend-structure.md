@@ -22,9 +22,10 @@ Centralis22's backend implementation contains the following packages:
 | Name | Comments |
 | ---  | ---      |
 | Config | Config. |
-| Handler | Classes to communicate with frontend. |
-| Model | Java objects used by the backend. Can be serialized from/to DB and frontend. |
+| Controller | HTTP endpoints. |
+| Handler | Socket endpoints. |
+| Model | POJOs. Can be serialized from/to DB and frontend. |
 | Repository | DB query methods. See [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories). |
-| Security | Classes to validate a user and save his login information. |
-| Service | Classes directly related to Centralis's requirements. |
-| Util | Supplementary classes to help services. |
+| Security | Classes to validate a user and save his login status. |
+| Service | Main logic classes. |
+| Util | Supplementary classes. |

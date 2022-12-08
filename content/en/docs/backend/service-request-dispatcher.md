@@ -16,4 +16,4 @@ toc: true
 ## RequestDispatcher
 
 Wrapper for `RequestHandler`. Sorts the request by type to avoid 
-bloating the message handlers. 
+bloating `WebSocketAPIHandler`. 

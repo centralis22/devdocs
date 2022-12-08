@@ -30,8 +30,8 @@
 
 [[main]]
   name = "Docs"
-  url = "/docs/aboutdocs/quickstart/"
-# url = "/docs/1.0/aboutdocs/quickstart/"
+  url = "/docs/important/for-users/"
+# url = "/docs/1.0/important/for-users/"
   weight = 10
 
 # [[main]]
